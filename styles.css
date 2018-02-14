@@ -1,0 +1,5 @@
+.btn--dis {
+  pointer-events: none;
+  opacity: .5;
+  background: #bbb !important;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Suggestions</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" type="text/css">
+  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"></link>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-toolbar fixed app dark color="blue-grey darken-4">
+        <v-toolbar-title v-text="title"></v-toolbar-title>
+      </v-toolbar>
+      <v-content>
+        <v-container fluid grid-list-lg>
+          <v-layout row wrap>
+            <v-flex xs12 sm12 md6 offset-md3>
+              <v-card>
+                <v-toolbar color="white" class="text-xs-center">
+                  <v-toolbar-title class="ml-3">Search for a City</v-toolbar-title>
+                  <v-text-field
+                    name="city"
+                    id="city"
+                    placeholder="Search"
+                    required
+                    prepend-icon="search"
+                    hide-details
+                    single-line
+                    slot="extension"
+                    class="px-3"
+                  ></v-text-field>
+                </v-toolbar>
+                <v-card-text style="min-height: 390px;" class="grey lighten-5 text-xs-center">
+                  <div id="resultsCt">
+                    <div class="table__overflow elevation-2">
+                      <table class="datatable table text-xs-left">
+                        <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Latitude</th>
+                              <th>Longitude</th>
+                              <th>Score</th>
+                          </tr>
+                      </thead>
+                      <tbody id="resultsTable">
+                      </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </v-card-text>
+                <v-card-text style="height: 100px; position: relative">
+                  <v-fab-transition>
+                    <v-btn
+                      id="previousBtn"
+                      color="pink"
+                      class="btn--dis"
+                      fab
+                      dark
+                      absolute
+                      top
+                      left
+                    >
+                      <v-icon>chevron_left</v-icon>
+                    </v-btn>
+                  </v-fab-transition>
+                  <v-fab-transition>
+                    <v-btn
+                      id="nextBtn"
+                      color="pink"
+                      class="btn--dis"
+                      dark
+                      absolute
+                      top
+                      right
+                      fab
+                    >
+                      <v-icon>chevron_right</v-icon>
+                    </v-btn>
+                  </v-fab-transition>
+                </v-card-text>
+                <v-card-actions>
+                  <v-toolbar-title id="totalCt"></v-toolbar-title>
+                <v-card-actions>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-content>
+      <v-footer class="px-3">
+        <span>&copy; 2018</span>
+      </v-footer>
+    </v-app>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vuetify/dist/vuetify.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'Suggestions'
+      }
+    })
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
