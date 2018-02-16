@@ -3,3 +3,16 @@
   opacity: .5;
   background: #bbb !important;
 }
+
+#resultsCt {
+  height: 100px;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 1s cubic-bezier(.25,.8,.5,1);
+}
+
+#resultsCt.visible {
+  height: 790px;
+  opacity: 1;
+  transition: all 1s cubic-bezier(.25,.8,.5,1);
+}
